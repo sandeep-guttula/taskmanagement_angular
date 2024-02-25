@@ -1,0 +1,26 @@
+<div class="sidebar-container" >
+    <h3>TaskManagement</h3>
+    <div class="projects">
+        <!-- <div class="project" >Project 1</div>
+        <div class="project" >Project 2</div> -->
+        @for(project of projects;track project.project_id){
+            <div class="project" (click)="selectProject(project.project_id)" >{{project.project_name}}</div>
+        } @empty {
+            <div class="project" >No Projects</div>
+        }
+    </div>
+    <div class="card flex justify-content-center">
+        <p-button (click)="showDialog()" size="small" icon="pi pi-external-link" label="+ Add Project"></p-button>
+        <p-dialog header="Header" [(visible)]="visible" [modal]="true" [style]="{ width: '40rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
+            <ng-template pTemplate="header">
+                <div class="inline-flex align-items-center justify-content-center gap-2">
+                    <span class="font-bold white-space-nowrap">Add Task</span>
+                </div>
+            </ng-template>
+            <input type="text" pInputText [(ngModel)]="newProjectName" placeholder="Enter the project name" />
+            <ng-template pTemplate="footer">
+                <p-button size="small" icon="pi pi-check" (click)="addProject()" label="Add" pAutoFocus [autofocus]="true"></p-button>
+            </ng-template>
+        </p-dialog>
+        </div>
+</div>

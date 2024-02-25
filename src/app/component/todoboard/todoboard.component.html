@@ -1,0 +1,71 @@
+@if(projects.length > 0){
+    <div class="angry-grid">
+        <div>
+            <p>{{selectedProject_id}}</p>
+            <p>To Do</p>
+            <div>
+                @for(todo of todos;track todo.todo_id){
+                    @if(todo.status === "todo" && todo.project_id === selectedProject_id ){
+                        <div>{{todo.todo_name}}</div>
+                        <div>
+                            <span>{{todo.start_date}}</span>
+                            <span>{{todo.end_date}}</span>
+                        </div>
+                    }
+                }
+            </div>           
+
+            <app-add-todo-btn></app-add-todo-btn>
+        </div>
+        <div>
+            <p>In Progress</p>
+            <div>
+                @for(todo of todos;track todo.todo_id){
+                    @if(todo.status === "inprogress" && todo.project_id === selectedProject_id ){
+                        <div>{{todo.todo_name}}</div>
+                        <div>
+                            <span>{{todo.start_date}}</span>
+                            <span>{{todo.end_date}}</span>
+                        </div>
+                    }
+                }
+            </div>
+            <app-add-todo-btn></app-add-todo-btn>
+        </div>
+        <div>
+            <p>In Review</p>
+            <div>
+                @for(todo of todos;track todo.todo_id){
+                    @if(todo.status === "inreview" && todo.project_id === selectedProject_id ){
+                        <div>{{todo.todo_name}}</div>
+                        <div>
+                            <span>{{todo.start_date}}</span>
+                            <span>{{todo.end_date}}</span>
+                        </div>
+                    }
+                }
+            </div>
+            <app-add-todo-btn></app-add-todo-btn>
+        </div>
+        <div>
+            <p>Completed</p>
+            <div>
+                @for(todo of todos;track todo.todo_id){
+                    @if(todo.status === "completed" && todo.project_id === selectedProject_id ){
+                        <div>{{todo.todo_name}}</div>
+                        <div>
+                            <span>{{todo.start_date}}</span>
+                            <span>{{todo.end_date}}</span>
+                        </div>
+                    }
+                }
+            </div>
+            <app-add-todo-btn></app-add-todo-btn>
+        </div>
+    </div>
+} @else {
+    <div>
+        <p>No Projects</p>
+        <p>Create and select the projects to display</p>
+    </div>
+}

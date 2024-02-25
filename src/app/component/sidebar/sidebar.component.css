@@ -1,0 +1,28 @@
+.sidebar-container{
+    display: flex;
+    flex-direction: column;
+    width: 17vw;
+    height: 97vh;
+    background-color: lightblue;
+}
+
+.projects{
+    background-color: lightcoral;
+    padding-block: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.project{
+    background-color: lightgreen;
+    padding-block: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}

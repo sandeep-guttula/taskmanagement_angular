@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    width: 99vw;
+    height: 97vh;
+    background-color: lightsalmon;
+}
+
+.todosboard{
+    display: flex;
+    flex-direction: column;
+    width: 82vw;
+    height: 97vh;    
+}
