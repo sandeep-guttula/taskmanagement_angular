@@ -2,4 +2,48 @@
     display: grid; 
     grid-template-rows: 1fr ;
     grid-template-columns: 1fr 1fr 1fr 1fr;
- }
+}
+
+.empty-board{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+.empty-board > p{
+    font-size: 1.5rem;
+    color: #A0A0A0;
+    font-weight: bold;
+}
+
+.todo{
+    background: #EBEEFC;
+    color: #3659E2;
+}
+
+.inprogress{
+    background: #FDF2FA;
+    color: #EE46BC;
+}
+
+.inreview{
+    background: #EFF8FF;
+    color: #3FA1E3;
+}
+
+.completed{
+    background: #F2F8F2;
+    color: #3FA13E;
+}  
+
+.badge{
+    border-radius: 5px;
+    padding: 0.5em 1em;
+
+    border-radius: 25px;
+    width: max-content;
+}

@@ -1,13 +1,17 @@
+h3{
+    border-bottom: 1px solid #EBEEFC;
+    padding: 10px 5px;
+}
+
 .sidebar-container{
     display: flex;
     flex-direction: column;
     width: 17vw;
     height: 97vh;
-    background-color: lightblue;
+    border-right: #EBEEFC 1px solid;
 }
 
 .projects{
-    background-color: lightcoral;
     padding-block: 1em;
     display: flex;
     flex-direction: column;
@@ -15,14 +19,17 @@
 }
 
 .project{
-    background-color: lightgreen;
     padding-block: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 7px;
+    transition: 0.3s;
+    padding-left: 1rem;
+    border-bottom: #EBEEFC 1px solid;
 }
 
 .project:hover{
-    background-color: lightgray;
+  background: #EBEEFC;
     cursor: pointer;
 }

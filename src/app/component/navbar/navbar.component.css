@@ -1,0 +1,10 @@
+.nav-container{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #EBEEFC;
+    background-color: transparent;
+    padding: 10px ;
+    height: 9vh;
+    font-size: large;
+    font-weight: bold;
+}
