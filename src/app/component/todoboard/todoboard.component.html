@@ -1,19 +1,26 @@
 @if(projects.length > 0){
     <div class="angry-grid">
-        <div>
+        <div class="column" >
             <p class="todo badge" >To Do</p>
             <div>
                 @for(todo of todos;track todo.todo_id){
                     @if(todo.status === "todo" && todo.project_id === selectedProject_id ){
-                        <div>{{todo.todo_name}}</div>
-                        <div>
-                            <span>{{todo.start_date}}</span>
-                            <span>{{todo.end_date}}</span>
+                       <div class="card" >
+                        <div class="card_title" >{{todo.todo_name}}</div>
+                        <div class="date_container" >
+                            <div class="date" >
+                                <span class="date_title" >Start date</span>
+                                <span class="date_" >{{todo.start_date}}</span>
+                            </div>
+                            <div class="date" >
+                                <span class="date_title">End date</span>
+                                <span class="date_" >{{todo.end_date}}</span>
+                            </div>
                         </div>
+                       </div>
                     }
                 }
             </div>           
-
             <app-add-todo-btn></app-add-todo-btn>
         </div>
         <div>
@@ -21,11 +28,19 @@
             <div>
                 @for(todo of todos;track todo.todo_id){
                     @if(todo.status === "inprogress" && todo.project_id === selectedProject_id ){
-                        <div>{{todo.todo_name}}</div>
-                        <div>
-                            <span>{{todo.start_date}}</span>
-                            <span>{{todo.end_date}}</span>
+                       <div class="card" >
+                        <div class="card_title " >{{todo.todo_name}}</div>
+                        <div class="date_container" >
+                            <div class="date" >
+                                <span class="date_title " >Start date</span>
+                                <span class="date_ " >{{todo.start_date}}</span>
+                            </div>
+                            <div class="date" >
+                                <span class="date_title ">End date</span>
+                                <span class="date_ " >{{todo.end_date}}</span>
+                            </div>
                         </div>
+                       </div>
                     }
                 }
             </div>
@@ -36,11 +51,19 @@
             <div>
                 @for(todo of todos;track todo.todo_id){
                     @if(todo.status === "inreview" && todo.project_id === selectedProject_id ){
-                        <div>{{todo.todo_name}}</div>
-                        <div>
-                            <span>{{todo.start_date}}</span>
-                            <span>{{todo.end_date}}</span>
+                       <div class="card" >
+                        <div class="card_title " >{{todo.todo_name}}</div>
+                        <div class="date_container" >
+                            <div class="date" >
+                                <span class="date_title " >Start date</span>
+                                <span class="date_ " >{{todo.start_date}}</span>
+                            </div>
+                            <div class="date" >
+                                <span class="date_title ">End date</span>
+                                <span class="date_ " >{{todo.end_date}}</span>
+                            </div>
                         </div>
+                       </div>
                     }
                 }
             </div>
@@ -51,11 +74,19 @@
             <div>
                 @for(todo of todos;track todo.todo_id){
                     @if(todo.status === "completed" && todo.project_id === selectedProject_id ){
-                        <div>{{todo.todo_name}}</div>
-                        <div>
-                            <span>{{todo.start_date}}</span>
-                            <span>{{todo.end_date}}</span>
+                       <div class="card" >
+                        <div class="card_title " >{{todo.todo_name}}</div>
+                        <div class="date_container" >
+                            <div class="date" >
+                                <span class="date_title " >Start date</span>
+                                <span class="date_ " >{{todo.start_date}}</span>
+                            </div>
+                            <div class="date" >
+                                <span class="date_title ">End date</span>
+                                <span class="date_ " >{{todo.end_date}}</span>
+                            </div>
                         </div>
+                       </div>
                     }
                 }
             </div>

@@ -1,22 +1,31 @@
 <div class="card flex justify-content-center">
-    <p-button (click)="showDialog()" icon="pi pi-external-link" label="Show"></p-button>
-    <p-dialog header="Header" [(visible)]="visible" [modal]="true" [style]="{ width: '50rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
+    <p-button (click)="showDialog()" size="small"  [style]="{'width':'250px'}" icon="pi pi-external-link" label="+ Add Task"></p-button>
+    <p-dialog header="Header" [(visible)]="visible" [modal]="true" [style]="{ width: '40rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
         <ng-template pTemplate="header">
             <div class="inline-flex align-items-center justify-content-center gap-2">
-                <span class="font-bold white-space-nowrap">Add Task</span>
+                <span class="font-bold white-space-nowrap" style="font-weight: 700;" >Add Task</span>
             </div>
         </ng-template>
-        <div>
-            <input type="text" pInputText [(ngModel)]="newProjectName" />
-            <div>
-                <input type="date" pInputText [(ngModel)]="startDate" />
-                <input type="date" pInputText [(ngModel)]="endDate" />
+        <div style="display: flex;flex-direction: column;width: 100%; gap: 2rem;" >
+            <div class="inputs" >
+                <label for="name">Name of the task</label>
+                <input name="name" type="text" pInputText [(ngModel)]="newProjectName" />
             </div>
-            <select [(ngModel)]="status" >
-                <option value="todo">To Do</option>
-                <option value="inprogress">In Progress</option>
-                <option value="inreview">In Review</option>
-                <option value="completed">Completed</option>
+            <div style="display: flex; gap: 1rem;" >
+                <div class="inputs" >
+                    <label for="start_date">Start date</label>
+                    <input name="start_date" type="date" pInputText [(ngModel)]="startDate" />
+                </div>
+                <div class="inputs" >
+                    <label for="end_date">End date</label>
+                    <input name="end_date" type="date" pInputText [(ngModel)]="endDate" />
+                </div>
+            </div>
+            <select [(ngModel)]="status" class="dropdown" >
+                <option value="todo" class="dropdown" >To Do</option>
+                <option value="inprogress" class="dropdown" >In Progress</option>
+                <option value="inreview" class="dropdown" >In Review</option>
+                <option value="completed" class="dropdown" >Completed</option>
             </select>
         </div>
         <ng-template pTemplate="footer">

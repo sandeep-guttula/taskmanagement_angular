@@ -41,6 +41,16 @@ export class AddTodoBtnComponent implements OnInit{
   }
 
   addTodo(){
+
+    if(this.newProjectName === '' || this.startDate === '' || this.endDate === '' || this.status === ''){
+      return;
+    }
+
+    if(this.todoService.currentSelectedProject_id.value === -1){
+      alert('Please select a project');
+      return;
+    }
+
     const todo:Todo = {
       todo_id: this.todos.length + 1,
       project_id: this.todoService.currentSelectedProject_id.value,
