@@ -33,7 +33,13 @@ export class AddTodoBtnComponent implements OnInit{
   }
 
   showDialog() {
-      this.visible = true;
+    if(this.todoService.currentSelectedProject_id.value === -1 ){
+      alert('Please select a project');
+      return;
+    }
+  
+    this.visible = true;
+
   }
 
   hideDialog() {
@@ -43,11 +49,7 @@ export class AddTodoBtnComponent implements OnInit{
   addTodo(){
 
     if(this.newProjectName === '' || this.startDate === '' || this.endDate === '' || this.status === ''){
-      return;
-    }
-
-    if(this.todoService.currentSelectedProject_id.value === -1){
-      alert('Please select a project');
+      alert('Please fill all the fields');
       return;
     }
 

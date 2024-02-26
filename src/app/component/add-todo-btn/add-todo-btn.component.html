@@ -9,19 +9,19 @@
         <div style="display: flex;flex-direction: column;width: 100%; gap: 2rem;" >
             <div class="inputs" >
                 <label for="name">Name of the task</label>
-                <input name="name" type="text" pInputText [(ngModel)]="newProjectName" />
+                <input name="name" required type="text" pInputText [(ngModel)]="newProjectName" />
             </div>
             <div style="display: flex; gap: 1rem;" >
                 <div class="inputs" >
                     <label for="start_date">Start date</label>
-                    <input name="start_date" type="date" pInputText [(ngModel)]="startDate" />
+                    <input name="start_date" required="true" type="date" pInputText [(ngModel)]="startDate" />
                 </div>
                 <div class="inputs" >
                     <label for="end_date">End date</label>
-                    <input name="end_date" type="date" pInputText [(ngModel)]="endDate" />
+                    <input name="end_date" required type="date" pInputText [(ngModel)]="endDate" />
                 </div>
             </div>
-            <select [(ngModel)]="status" class="dropdown" >
+            <select [(ngModel)]="status" class="dropdown" required >
                 <option value="todo" class="dropdown" >To Do</option>
                 <option value="inprogress" class="dropdown" >In Progress</option>
                 <option value="inreview" class="dropdown" >In Review</option>

@@ -29,6 +29,9 @@ export class SidebarComponent implements OnInit {
   }
 
   addProject(){
+    if(this.newProjectName === ''){
+      return;
+    }
     const project: Project = {
       project_id: this.projects.length + 1,
       project_name: this.newProjectName,
